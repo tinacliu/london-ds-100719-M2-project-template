@@ -36,3 +36,13 @@ class WeatherGetter():
     else:
       print('Error')
     return data
+
+
+def sql(query):
+  cur.execute("""
+              query
+              """)
+
+  df = pd.DataFrame(cur.fetchall())
+  df.columns = [x[0] for x in cur.description]
+  return df

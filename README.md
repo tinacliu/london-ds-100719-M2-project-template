@@ -2,7 +2,7 @@
 ________________________
 # Module 2 Summative Lab
 
-    Student Name: <Jazz Doe>
+    Student Name: <Tina Liu>
 
 ## Task Tracker
 
