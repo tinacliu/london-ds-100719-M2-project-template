@@ -22,7 +22,7 @@ class WeatherGetter():
 
 
   def getForcast(self, year, mth, day, lat = '52.52', long = '13.405'):
-    exclude = 'exclude=currently,hourly,flags,alerts'
+    exclude = 'exclude=daily,hourly,flags,alerts'
     d = datetime.date(year,mth,day)
 
     unixtime = int(float(time.mktime(d.timetuple())))
@@ -31,11 +31,17 @@ class WeatherGetter():
 
     response = requests.get(url)
     if response.status_code == 200:
-      data = response.json()
+      weather = response.json()
+
+      if weather['currently'].get('icon'):
+        condition = weather['currently'].get('icon')
+      else:
+        condition = weather['currently'].get('summary')
+
       print('Success')
     else:
       print('Error')
-    return data
+    return condition
 
 
 
