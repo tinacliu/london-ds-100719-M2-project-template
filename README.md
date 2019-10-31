@@ -10,13 +10,13 @@ Modelled on a simple [Kanban](https://www.atlassian.com/agile/kanban) process wo
 
 | TO DO | DOING | BLOCKED | DONE |
 |-------|-------|---------|------|
-|1||||
-|2||||
-|3||||
-|4||||
-|5||||
-|6||||
-|7||||
+|1|||Y|
+|2|||Y|
+|3|||Y|
+|4|||Y|
+|5|||Y|
+|6|||Y|
+|7|||Y|
 |8||||
 |9||||
 |10||||

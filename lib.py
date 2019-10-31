@@ -4,9 +4,9 @@ from dotenv import load_dotenv
 import os
 import time
 import datetime
+import sqlite3
 
 load_dotenv()
-
 
 class MongoHandler():
     pass
@@ -38,11 +38,4 @@ class WeatherGetter():
     return data
 
 
-def sql(query):
-  cur.execute("""
-              query
-              """)
 
-  df = pd.DataFrame(cur.fetchall())
-  df.columns = [x[0] for x in cur.description]
-  return df
