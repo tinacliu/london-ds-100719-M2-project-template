@@ -6,6 +6,7 @@ import time
 import datetime
 import sqlite3
 import pandas as pd
+import pymongo
 
 load_dotenv()
 
@@ -34,8 +35,7 @@ class DataGetter():
     df.columns = [x[0] for x in cur.description]
     return df
 
-class MongoHandler():
-    pass
+
 
 class WeatherGetter():
 
@@ -70,4 +70,25 @@ class WeatherGetter():
     return condition
 
 
+
+class MongoHandler():
+
+  def __init__(self):
+    self.myclient = pymongo.MongoClient("mongodb://127.0.0.1:27017/")
+    self.mydb = self.myclient['matches_data']
+    self.coll = self.mydb['team_stats']
+
+  def getDataDict(self, name, tot_scores, tot_wins, win_perc_rain, graph = ''):
+    team_data = {
+                'name': name,
+                'season': 2011,
+                'total goals': tot_scores,
+                'total wins': tot_wins,
+                'rain day win %': win_perc_rain,
+                'win_perc_graph': graph
+                }
+    return team_data
+
+  def insertData(self, team_data):
+    self.coll.insert_one(team_data)
 

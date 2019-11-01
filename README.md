@@ -19,11 +19,11 @@ Modelled on a simple [Kanban](https://www.atlassian.com/agile/kanban) process wo
 |7|||Y|
 |8|||Y|
 |9|||Y|
-|10||||
-|11||||
-|12||||
-|13||||
-|14||||
+|10|||Y|
+|11|||Y|
+|12|||Y|
+|13|||Y|
+|14|||Y|
 
 Your tasks:
  1. Fork this repository. **[Checkpoint 1]**
