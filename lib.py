@@ -5,8 +5,34 @@ import os
 import time
 import datetime
 import sqlite3
+import pandas as pd
 
 load_dotenv()
+
+# # connect to database
+# conn = sqlite3.connect('database.sqlite')
+# cur = conn.cursor()
+
+# # method to run SQL query
+# def sql(query):
+#     cur.execute(query)
+#     df = pd.DataFrame(cur.fetchall())
+#     df.columns = [x[0] for x in cur.description]
+    # return df
+
+
+class DataGetter():
+
+  def __init__(self,database):
+    conn = sqlite3.connect(database)
+    self.CUR = conn.cursor()
+
+  def sql(self,query):
+    cur = self.CUR
+    cur.execute(query)
+    df = pd.DataFrame(cur.fetchall())
+    df.columns = [x[0] for x in cur.description]
+    return df
 
 class MongoHandler():
     pass
